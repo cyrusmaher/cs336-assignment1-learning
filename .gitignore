@@ -161,3 +161,17 @@ cython_debug/
 
 .ruff_cache/
 *.zip
+
+# CS336 local artifacts
+data/
+checkpoints/
+runs/
+wandb/
+outputs/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.pkl
+*.jsonl
