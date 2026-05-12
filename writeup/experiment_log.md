@@ -80,3 +80,50 @@ Add new runs below this line.
 ### Next Change
 
 > Do not launch the full 2.1G TinyStories tokenizer run until the merge loop is improved or a smaller extrapolation suggests the runtime is acceptable.
+
+### 2026-05-12-bpe-tinystories-full
+
+- Date: 2026-05-12
+- Problem: `train_bpe_tinystories`
+- Dataset: `/Users/cyrusmaher/Documents/CS336/TinyStoriesV2-GPT4-train.txt`
+- Dataset size: 2,227,753,162 bytes
+- Dataset SHA-256: `6418d412de72888f52b5142c761ac21a582f7d1166f0bfbdb5f03ccfdec90443`
+- Tokenizer: byte-level BPE, vocab size 10,000, special token `<|endoftext|>`
+- Model config: N/A
+- Optimizer config: N/A
+- Batch size: N/A
+- Context length: N/A
+- Total steps or tokens: 9,743 learned merges
+- Device: CPU
+- Python: 3.12.5 via `uv run`
+- Command: `scripts/problem_2_5_train_bpe_tinystories.sh`
+- Git commit: `e7ed69d`
+- Dirty files before run: none
+
+### Hypothesis
+
+> Run the full TinyStories BPE tokenizer training after validating the script on fixtures and a 50MB slice.
+
+### Results
+
+- Final train loss: N/A
+- Final validation loss: N/A
+- Best validation loss: N/A
+- Runtime: 568.83s wall-clock (`elapsed_seconds=568.313`)
+- Peak memory: 2,040,037,376 bytes maximum resident set size
+- Generated sample path: N/A
+- Learning curve path: N/A
+- Vocab path: `outputs/problem_2_5_train_bpe_tinystories/vocab.json`
+- Merges path: `outputs/problem_2_5_train_bpe_tinystories/merges.txt`
+- Summary path: `outputs/problem_2_5_train_bpe_tinystories/summary.json`
+- Actual vocab size: 10,000
+- Number of merges: 9,743
+- Longest token: `b' responsibility'` (15 bytes), token ID 9,379
+
+### Observations
+
+> The full run completed much faster than the rough 50MB linear extrapolation. Peak memory was about 2.04GB RSS, and the longest token looks like a common TinyStories word with a leading space.
+
+### Next Change
+
+> Use these artifacts for the written `train_bpe_tinystories` response, then continue to profiling and/or the OpenWebText tokenizer experiment.
