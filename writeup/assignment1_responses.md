@@ -14,7 +14,7 @@ Deliverable: One-sentence response.
 
 Response:
 
-> TODO
+> `chr(0)` returns a Python string of length 1 whose content is the Unicode null character, represented as `'\x00'`.
 
 ### (b)
 
@@ -24,7 +24,7 @@ Deliverable: One-sentence response.
 
 Response:
 
-> TODO
+> `repr(chr(0))` displays the null character with escapes, as `'\x00'`, while `print(chr(0))` emits the null character itself, which is not visible.
 
 ### (c)
 
@@ -34,7 +34,7 @@ Deliverable: One-sentence response.
 
 Response:
 
-> TODO
+> When it occurs in text, it usually renders invisibly, so the surrounding characters may appear adjacent, but the null character is still present in the string.
 
 ## Problem `unicode2`: Unicode Encodings
 
@@ -46,7 +46,7 @@ Deliverable: One-to-two sentence response.
 
 Response:
 
-> TODO
+> UTF-16 and UTF-32 often require more bytes for common text than UTF-8, so they produce longer byte sequences and make tokenizer training and downstream modeling less efficient.
 
 ### (b)
 
@@ -56,7 +56,7 @@ Deliverable: Example input byte string plus one-sentence explanation.
 
 Response:
 
-> TODO
+> For example, `"🙂".encode("utf-8")` produces a multi-byte input such as `b'\xf0\x9f\x99\x82'`, and the function fails because it assumes each byte can be decoded as a complete character even though UTF-8 characters can span multiple bytes.
 
 ### (c)
 
@@ -66,7 +66,7 @@ Deliverable: Example plus one-sentence explanation.
 
 Response:
 
-> TODO
+> `b"\xbf\xbf"` is invalid UTF-8 because both bytes are continuation bytes, and a continuation byte cannot start a Unicode character.
 
 ## Problem `train_bpe`: BPE Tokenizer Training
 
@@ -535,4 +535,3 @@ Deliverable: Final validation loss, learning curve with wall-clock x-axis under 
 Response:
 
 > TODO
-
