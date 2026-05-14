@@ -29,11 +29,11 @@ def main() -> None:
     summary_path = output_dir / "summary.json"
 
     with vocab_path.open("w", encoding="utf-8") as f:
-        json.dump({str(token_id): list(token_bytes) for token_id, token_bytes in vocab.items()}, f, indent=2)
+        json.dump({str(token_id): repr(token_bytes) for token_id, token_bytes in vocab.items()}, f, indent=2)
 
     with merges_path.open("w", encoding="utf-8") as f:
         for left, right in merges:
-            f.write(f"{left.hex()}\t{right.hex()}\n")
+            f.write(f"{left!r}\t{right!r}\n")
 
     longest_token_id, longest_token = max(vocab.items(), key=lambda item: (len(item[1]), item[0]))
     summary = {
