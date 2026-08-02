@@ -176,3 +176,5 @@ outputs/
 *.npz
 *.pkl
 *.jsonl
+# roborev snapshots
+/.roborev/
