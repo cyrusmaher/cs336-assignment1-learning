@@ -1,5 +1,31 @@
 # CS336 Spring 2025 Assignment 1: Basics
 
+## Implementation status
+
+This is my in-progress implementation of Stanford CS336 Assignment 1. The goal
+is to build a decoder-only Transformer language model and its data and training
+stack from low-level PyTorch tensor operations rather than use high-level model
+or training frameworks.
+
+Completed work currently includes:
+
+- byte-level BPE training, including a recorded full 2.2 GB TinyStories
+  tokenizer run;
+- linear and embedding layers, RMSNorm, RoPE, scaled dot-product attention,
+  causal multi-head attention, SwiGLU blocks, Transformer blocks, and an
+  assembled Transformer language model; and
+- experiment scripts and provenance records for the completed tokenizer runs.
+
+The repository is not yet a completed end-to-end training stack. As of the
+2026-08-07 audit, the principal Transformer assembly tests pass, while the
+tokenizer adapter, SiLU/SwiGLU adapter coverage, optimizer and training
+utilities, and full test suite remain in progress. Public descriptions should
+therefore say that I am *implementing* the stack, not that I have completed it.
+
+See [docs/implementation_map.md](docs/implementation_map.md) for the component
+map and [writeup/experiment_log.md](writeup/experiment_log.md) for recorded
+runs.
+
 For a full description of the assignment, see the assignment handout at
 [cs336_assignment1_basics.pdf](./cs336_assignment1_basics.pdf)
 
@@ -47,4 +73,3 @@ gunzip owt_valid.txt.gz
 
 cd ..
 ```
-
